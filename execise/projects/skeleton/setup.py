@@ -4,14 +4,14 @@ try:
 except ImportError:
     from distutils.core import setup
 
-config=[
-    "description":"Project test",
-    "author":"Lai",
+config = {
+    "description": "Project test",
+    "author": "Lai",
     "version":"0.1",
     "install_requires":["nose"],
-    "pakcage":["NAME"],
+    "packages":["NAME"],
     "name":"TestProject",
-    "scrpts":[]
-]
+    "scripts":[]
+}
 
-setup(**confg)
+setup(**config)
