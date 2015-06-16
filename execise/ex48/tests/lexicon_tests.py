@@ -1,6 +1,6 @@
 #-*- utf-8-*-
 from nose.tools import *
-from lexicon import lexicon
+from lexicon import lexicon  #from lexicon folder import module lexicon.py
 
 def test_directions():
 	assert_equal(lexicon.scan("north"), [("direction", "north")])
