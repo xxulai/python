@@ -1,4 +1,7 @@
 #-*- utf-8-*-
+from nose.tools import *
+from lexicon import lexicon
+
 def test_directions():
 	assert_equal(lexicon.scan("north"), [("direction", "north")])
 	result=lexicon.scan("north south east")
@@ -34,7 +37,7 @@ def test_numbers():
 							
 def test_errors():
 	assert_equal(lexicon.scan("ASDFASDFASDF"), [("error", "ASDFASDFASDF")])
-	result=lexicon.scan("bear IAS princess in of")
+	result=lexicon.scan("bear IAS princess")
 	assert_equal(result,[("noun", "bear"),
 							("error", "IAS"),
 							("noun", "princess")])
