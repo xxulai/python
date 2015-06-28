@@ -1,10 +1,10 @@
-#-*- coding: utf-8 -*-
+#-*- coding: utf-8-*-
 class ParserError(Exception):
 	pass
 
 class Sentence(object):
-
 	def __init__(self, subject, verb, object):
+		print "sub, verb, obj: ", subject, verb, object
 		self.subject=subject[1]
 		self.verb=verb[1]
 		self.object=object[1]
@@ -57,7 +57,7 @@ def parse_object(word_list):
 def parse_subject(word_list, subj):
 	verb=parse_verb(word_list)
 	obj=parse_object(word_list)
-	
+	print "verb obj: ", verb, obj
 	return Sentence(subj, verb, obj)
 	
 def parse_sentence(word_list):
@@ -72,3 +72,18 @@ def parse_sentence(word_list):
 		return parse_subject(word_list, ("noun", "player"))
 	else:
 		raise ParserError("Must start with subject, object, or verb not: %s" %start)
+
+if __name__=="__main__":
+	'''verb=parse_verb([("stop"), ("verb", "go")])  #exception, verb='s'
+	print "verb is: ", verb
+	'''
+	print parse_subject([("verb", "go"), ("noun", "home")], ("subject", "I"))
+	
+	print('This is a\" test') #show-> This is a" test
+
+	tuple=[("stop", "go"), ("verb", "go")]
+	print tuple[0]
+
+	tuple=[("stop"), ("verb", "go")]
+	print tuple[0]
+		
