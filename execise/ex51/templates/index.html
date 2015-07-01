@@ -1,12 +1,15 @@
 $def with (greeting)
-<html>
+<!--html>
 	<head>
 		<title>Gothons Of Planet Percal #25</title>
 	</head>
-	<body>
+	<body-->
 		$if greeting:
 			I just wanted to say <em style="color: green; font-size:2em;">$greeting</em>.
 		$else:
 			<em>Hello</em>, world!  <!--greeting = "", code comes here-->
-	</body>
-</html>
+        <form action="/hello">
+            <input type="submit" value="Go Back Hello">
+        </form>
+	<!--/body>
+</html-->
