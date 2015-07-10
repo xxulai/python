@@ -1,6 +1,6 @@
 #-*-utf-8-*-
 from nose.tools import *
-from ex47.game import Room
+from gothonweb.map import Room
 
 def test_room():
     gold=Room("GoldRoom", 
